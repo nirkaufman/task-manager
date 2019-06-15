@@ -1,0 +1,5 @@
+# Expect to get an array of tasks
+GET http://localhost:3000/tasks
+Accept: application/json
+
+###
