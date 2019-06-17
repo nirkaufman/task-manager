@@ -5,7 +5,7 @@ Accept: application/json
 ###
 
 # Get a single task by id
-GET http://localhost:3000/tasks/1
+GET http://localhost:3000/tasks/7
 Accept: application/json
 
 ###
@@ -14,20 +14,27 @@ Accept: application/json
 POST http://localhost:3000/tasks
 Content-Type: application/json
 
-{}
+{
+  "title": "new task",
+  "description": "new task description",
+  "created_at": "12-1-2019",
+  "creator_id": "1"
+}
 
 ###
 
 # Update a task by id
 
-PUT http://localhost:3000/tasks/1
+PUT http://localhost:3000/tasks/7
 Content-Type: application/json
 
-{}
+{
+"title": "new title for 7"
+}
 
 ###
 
 # Delete a task by id
-DELETE http://localhost:3000/tasks/1
+DELETE http://localhost:3000/tasks/7
 
 ###
