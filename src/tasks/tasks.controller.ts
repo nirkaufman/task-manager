@@ -1,4 +1,4 @@
-import {Body, Controller, Delete, Get, Param, Post, Put, UseFilters, UseGuards} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Post, Put, UseFilters, UseGuards, UsePipes} from '@nestjs/common';
 import {Task} from './task.entity';
 import {TasksService} from './tasks.service';
 import {UpdateResult} from 'typeorm';
