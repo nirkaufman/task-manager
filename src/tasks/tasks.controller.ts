@@ -1,7 +1,8 @@
-import {Body, Controller, Delete, Get, Param, Post, Put} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Post, Put, UseGuards} from '@nestjs/common';
 import {Task} from './task.entity';
 import {TasksService} from './tasks.service';
 import {UpdateResult} from 'typeorm';
+import {AuthGuard} from '../auth.guard';
 
 @Controller('tasks')
 export class TasksController {
@@ -18,6 +19,7 @@ export class TasksController {
     }
 
     @Post()
+    @UseGuards(AuthGuard)
     createNewTask(@Body() newTask: Partial<Task>): Promise<Task> {
         return this.tasksService.createTask(newTask);
     }
