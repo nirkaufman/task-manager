@@ -14,7 +14,7 @@ Accept: application/json
 # Create a new task
 POST http://localhost:3000/tasks
 Content-Type: application/json
-token: 1234567
+token: 12345678
 
 {
   "title": "new task",

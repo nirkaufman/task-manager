@@ -1,10 +1,12 @@
-import {Body, Controller, Delete, Get, Param, Post, Put, UseGuards} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Post, Put, UseFilters, UseGuards} from '@nestjs/common';
 import {Task} from './task.entity';
 import {TasksService} from './tasks.service';
 import {UpdateResult} from 'typeorm';
 import {AuthGuard} from '../auth.guard';
+import {AuthFilter} from '../auth.filter';
 
 @Controller('tasks')
+@UseFilters(AuthFilter)
 export class TasksController {
     constructor(private tasksService: TasksService) {}
 
